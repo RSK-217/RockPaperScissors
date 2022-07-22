@@ -8,9 +8,79 @@ namespace RockPaperScissors;
 
 internal class Shoot
 {
-    public int Rock { get; set; }
-    public int Paper { get; set; }
-    public int Scissors { get; set; }
+    public Shoot(int playerChoice)
+    {
+        PlayerChoice = choiceString[playerChoice];
+        Random random = new Random();
+        int computerChoice = random.Next(1, 4);
+        ComputerChoice = choiceString[computerChoice];
+    }
 
-    public int Points { get; set; }
+    static List<string> choiceString = new List<string>() { "", "Rock", "Paper", "Scissors"};
+
+    public string PlayerChoice { get; set; }
+
+    public string ComputerChoice { get; set; }
+
+    internal string MatchResults()
+    {
+        return $@"{PlayerChoice}
+{ComputerChoice}";
+    }
+
+    internal string Result()
+    {
+        if ((PlayerChoice == "Rock" && ComputerChoice == "Scissors") || (PlayerChoice == "Scissors" && ComputerChoice == "Paper") || (PlayerChoice == "Paper" && ComputerChoice == "Rock"))
+        {
+            Console.WriteLine($"user won with {PlayerChoice} and computer chose {ComputerChoice}");
+            return "User"; }
+        else if ((PlayerChoice == ComputerChoice))
+        {
+            Console.WriteLine($"both players chose {PlayerChoice}");
+            return "It's a draw."; }
+        Console.WriteLine($"computer won with {ComputerChoice} and user chose {PlayerChoice}");
+        return "Computer";
+        
+
+    }
 }
+
+
+//    internal string RockImg()
+//    {
+//        return @"
+//ROCK
+//    _______
+//---'   ____)
+//      (_____)
+//      (_____)
+//      (____)
+//---.__(___)
+//";
+//    }
+
+//    internal string PaperImg()
+//    {
+//        return @"
+//PAPER
+//     _______
+//---'    ____)____
+//           ______)
+//          _______)
+//         _______)
+//---.__________)
+//";
+//    }
+
+//    internal string ScissorImg()
+//    {
+//        return @"
+//SCISSORS
+//    _______
+//---'   ____)____
+//          ______)
+//       __________)
+//      (____)
+//---.__(___)
+//";
+//    }
