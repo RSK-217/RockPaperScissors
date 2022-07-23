@@ -38,8 +38,8 @@ internal class Shoot
         }
         else if ((PlayerChoice == ComputerChoice))
         {
-            Console.WriteLine($"both players chose {PlayerChoice}");
-            return "It's a draw.";
+            Console.WriteLine($"It's a draw. Both players chose {PlayerChoice}");
+            return "";
         }
         Console.WriteLine($"computer won with {ComputerChoice} and user chose {PlayerChoice}");
         return "Computer";

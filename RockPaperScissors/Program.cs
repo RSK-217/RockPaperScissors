@@ -31,6 +31,15 @@ while (playerWins < 3 && computerWins < 3)
     {
         computerWins++;
     }
+
+    if (playerWins == 3)
+    {
+        Console.WriteLine("YOU WON THE GAME!");
+    } else if (computerWins == 3)
+    {
+        Console.WriteLine("you lost the game :(");
+    }
+
     Console.ReadLine();
     Console.Clear();
 }
