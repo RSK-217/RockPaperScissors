@@ -8,7 +8,13 @@ namespace RockPaperScissors;
 
 internal class Shoot
 {
-    public Shoot(int playerChoice)
+    static List<string> choiceString = new List<string>() { "", "Rock", "Paper", "Scissors" };
+
+    public string PlayerChoice { get; set; }
+
+    public string ComputerChoice { get; set; }
+    
+    public Shoot(int playerChoice) //Constructor
     {
         PlayerChoice = choiceString[playerChoice];
         Random random = new Random();
@@ -16,11 +22,6 @@ internal class Shoot
         ComputerChoice = choiceString[computerChoice];
     }
 
-    static List<string> choiceString = new List<string>() { "", "Rock", "Paper", "Scissors"};
-
-    public string PlayerChoice { get; set; }
-
-    public string ComputerChoice { get; set; }
 
     internal string MatchResults()
     {
@@ -28,27 +29,27 @@ internal class Shoot
 {ComputerChoice}";
     }
 
-    internal string Result()
+    internal string Result() //Method
     {
         if ((PlayerChoice == "Rock" && ComputerChoice == "Scissors") || (PlayerChoice == "Scissors" && ComputerChoice == "Paper") || (PlayerChoice == "Paper" && ComputerChoice == "Rock"))
         {
             Console.WriteLine($"user won with {PlayerChoice} and computer chose {ComputerChoice}");
-            return "User"; }
+            return "User";
+        }
         else if ((PlayerChoice == ComputerChoice))
         {
             Console.WriteLine($"both players chose {PlayerChoice}");
-            return "It's a draw."; }
+            return "It's a draw.";
+        }
         Console.WriteLine($"computer won with {ComputerChoice} and user chose {PlayerChoice}");
         return "Computer";
-        
+
 
     }
 }
 
 
-//    internal string RockImg()
-//    {
-//        return @"
+
 //ROCK
 //    _______
 //---'   ____)
@@ -59,9 +60,7 @@ internal class Shoot
 //";
 //    }
 
-//    internal string PaperImg()
-//    {
-//        return @"
+
 //PAPER
 //     _______
 //---'    ____)____
@@ -72,9 +71,7 @@ internal class Shoot
 //";
 //    }
 
-//    internal string ScissorImg()
-//    {
-//        return @"
+
 //SCISSORS
 //    _______
 //---'   ____)____

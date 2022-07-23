@@ -4,14 +4,14 @@ int computerWins = 0;
 
 while (playerWins < 3 && computerWins < 3)
 {
-Console.WriteLine($@"
+    Console.WriteLine($@"
  __________________________
 | Player: {playerWins}  | Computer: {computerWins} |
  --------------------------
 ");
 
-Console.WriteLine(
-    @"What would you like to throw?
+    Console.WriteLine(
+        @"What would you like to throw?
 1.Rock
 2.Paper
 3.Scissors");
