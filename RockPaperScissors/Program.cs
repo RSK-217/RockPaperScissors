@@ -1,4 +1,5 @@
 ﻿using RockPaperScissors;
+
 int playerWins = 0;
 int computerWins = 0;
 
@@ -43,19 +44,5 @@ while (playerWins < 3 && computerWins < 3)
     Console.ReadLine();
     Console.Clear();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Console.ReadLine();

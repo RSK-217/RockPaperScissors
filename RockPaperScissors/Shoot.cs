@@ -22,13 +22,6 @@ internal class Shoot
         ComputerChoice = choiceString[computerChoice];
     }
 
-
-    internal string MatchResults()
-    {
-        return $@"{PlayerChoice}
-{ComputerChoice}";
-    }
-
     internal string Result() //Method
     {
         if ((PlayerChoice == "Rock" && ComputerChoice == "Scissors") || (PlayerChoice == "Scissors" && ComputerChoice == "Paper") || (PlayerChoice == "Paper" && ComputerChoice == "Rock"))
