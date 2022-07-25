@@ -17,7 +17,8 @@ while (playerWins < 3 && computerWins < 3)
 2.Paper
 3.Scissors");
 
-    string choiceNum = Console.ReadLine();
+    string choiceNum = Console.ReadKey().KeyChar.ToString();
+    Console.WriteLine();
     int playerChoice = int.Parse(choiceNum);
 
     Shoot match = new Shoot(playerChoice);
